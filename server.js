@@ -12,11 +12,16 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 
+
+// API ROUTES
+app.post('/api/notes', (req, res) => {
+    res.json('post!');
+})
+
 // HTML ROUTES
 app.use('/', htmlRoutes);
 
 
-// API ROUTES
 
 
 
