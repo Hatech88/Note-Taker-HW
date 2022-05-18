@@ -1,10 +1,12 @@
 const express = require ('express');
 const htmlRoutes = require('./routes/htmlRoutes');
+const ApiRoutes = require('./routes/ApiRoutes');
 
 
 // initialize the app and create a port 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 
 app.use(express.json());
@@ -14,9 +16,11 @@ app.use(express.static('public'));
 
 
 // API ROUTES
-app.post('/api/notes', (req, res) => {
-    res.json('post!');
-})
+// app.post('/api/notes', (req, res) => {
+//     res.json('post!');
+// })
+
+app.use('/api', ApiRoutes);
 
 // HTML ROUTES
 app.use('/', htmlRoutes);
