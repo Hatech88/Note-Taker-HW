@@ -16,11 +16,9 @@ app.use(express.static('public'));
 
 
 // API ROUTES
-// app.post('/api/notes', (req, res) => {
-//     res.json('post!');
-// })
-
 app.use('/api', ApiRoutes);
+
+
 
 // HTML ROUTES
 app.use('/', htmlRoutes);
